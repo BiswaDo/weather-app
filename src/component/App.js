@@ -1,17 +1,21 @@
 import React from "react"
 import Search_Box from "./search-box"
+import Weather_Box from "./weather-data-box"
 import Side_bar from "./side_bar";
+
+
 function app() {
+  
+  
+
   return (
-    <div className="container border">
-      <div className="sidebar border">
+    <div className="container">
+      <div className="sidebar">
         <Side_bar />
       </div>
       <div className="main-box">
         <Search_Box />
-        <div className="weather-data-box border">
-  
-        </div>
+        <Weather_Box />
         <div className="forecast-box border"></div>
       </div>
     </div>
