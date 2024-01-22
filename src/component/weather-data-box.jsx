@@ -1,13 +1,7 @@
 
-
 function weatherBox(){
-
     
-
-        
-    return(
-
-        
+    return(    
         
         <div className="mid-part">
             <div className="current-weather">
