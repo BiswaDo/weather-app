@@ -2,8 +2,6 @@
 
 function searchBox(){
     const API_key = "e807385dc4cef16d9f5b3aaa9fac79ca";
-
-
     
     async function search(){
     const element = document.getElementsByClassName("place")[0];
@@ -11,6 +9,7 @@ function searchBox(){
     if (element.value===""){
       return 0;
     }
+        
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${element.value}&appid=${API_key}&units=metric`;
 
     let response = await fetch(url);
