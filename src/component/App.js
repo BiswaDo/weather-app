@@ -5,9 +5,6 @@ import Side_bar from "./side_bar";
 
 
 function app() {
-  
-  
-
   return (
     <div className="container">
       <div className="sidebar">
