@@ -12,7 +12,7 @@ function weatherBox(){
                     <img src="https://cdn-icons-png.flaticon.com/512/1163/1163661.png" alt="" />
                     </div>
                     <div className="weather-icon">
-                        <p className="temp">25 c</p>
+                        <p className="temp">25°C</p>
                     </div>
                 </div>
                 {/* <div className="weather-other-detail">
