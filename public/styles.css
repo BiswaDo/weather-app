@@ -122,6 +122,8 @@
     font-weight: 900;
     font-style: italic;
   }
+
+  /* =================================== */
   
   
   .container{
@@ -262,8 +264,18 @@
   text-align: center;
 }
 
-.weather-icon p{
+.temp::after{
+  content: "°c";
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+  top: -30px;
+  right: -3px;
+}
+
+.weather-icon .temp{
   font-size: 45px;
+  font-weight: bold;
 }
 
 .weather-icon .des{

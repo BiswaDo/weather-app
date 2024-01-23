@@ -15,7 +15,7 @@ function searchBox(){
     let response = await fetch(url);
     let data = await response.json()
     const temp = document.getElementsByClassName("temp")[0];
-    temp.innerHTML = Math.floor(data.main.temp)+"°c";
+    temp.innerHTML = Math.floor(data.main.temp);
     
     let date = new Date();
     let current_time = date.toLocaleString([], {
@@ -30,95 +30,34 @@ function searchBox(){
     let desc = data.weather[0].description;
     const description = document.getElementsByClassName("des")[0];
     description.innerHTML=desc;
-    let icon = data.weather[0].icon;
     let setIcon = document.getElementsByClassName("main-icon")[0];
 
 
-    switch (icon) {
-        case "01d":
-            setIcon.src = "https://openweathermap.org/img/wn/01d@4x.png";
-            break;
-        case "02d":
-            setIcon.src = "https://openweathermap.org/img/wn/02d@4x.png";
-            break;
-        case "03d":
-            setIcon.src = "https://openweathermap.org/img/wn/03d@4x.png";
-            break;
-        case "04d":
-            setIcon.src = "https://openweathermap.org/img/wn/04d@4x.png";
-            break;
-        case "09d":
-            setIcon.src = "https://openweathermap.org/img/wn/09d@4x.png";
-            break;
-        case "010d":
-            setIcon.src = "https://openweathermap.org/img/wn/10d@4x.png";
-            break;
-        case "011d":
-            setIcon.src = "https://openweathermap.org/img/wn/11d@4x.png";
-            break;
-        case "013d":
-            setIcon.src = "https://openweathermap.org/img/wn/13d@4x.png";
-            break;
-        case "050d":
-            setIcon.src = "https://openweathermap.org/img/wn/50d@4x.png";
-            break;
-        case "01d":
-            setIcon.src = "https://openweathermap.org/img/wn/01d@4x.png";
-            break;
-        case "02d":
-            setIcon.src = "https://openweathermap.org/img/wn/02d@4x.png";
-            break;
-        case "03d":
-            setIcon.src = "https://openweathermap.org/img/wn/03d@4x.png";
-            break;
-        case "04d":
-            setIcon.src = "https://openweathermap.org/img/wn/04d@4x.png";
-            break;
-        case "09d":
-            setIcon.src = "https://openweathermap.org/img/wn/09d@4x.png";
-            break;
-        case "010d":
-            setIcon.src = "https://openweathermap.org/img/wn/10d@4x.png";
-            break;
-        case "011d":
-            setIcon.src = "https://openweathermap.org/img/wn/11d@4x.png";
-            break;
-        case "013d":
-            setIcon.src = "https://openweathermap.org/img/wn/13d@4x.png";
-            break;
-        case "050d":
-            setIcon.src = "https://openweathermap.org/img/wn/50d@4x.png";
-            break;
-        case "01n":
-            setIcon.src = "https://openweathermap.org/img/wn/01n@4x.png";
-            break;
-        case "02n":
-            setIcon.src = "https://openweathermap.org/img/wn/02n@4x.png";
-            break;
-        case "03n":
-            setIcon.src = "https://openweathermap.org/img/wn/03n@4x.png";
-            break;
-        case "04n":
-            setIcon.src = "https://openweathermap.org/img/wn/04n@4x.png";
-            break;
-        case "09n":
-            setIcon.src = "https://openweathermap.org/img/wn/09n@4x.png";
-            break;
-        case "10n":
-            setIcon.src = "https://openweathermap.org/img/wn/10n@4x.png";
-            break;
-        case "11n":
-            setIcon.src = "https://openweathermap.org/img/wn/11n@4x.png";
-            break;
-        case "13n":
-            setIcon.src = "https://openweathermap.org/img/wn/13n@4x.png";
-            break;
-        case "50n":
-            setIcon.src = "https://openweathermap.org/img/wn/50n@4x.png";
-            break;
-        default:
-            return 0;
-    }
+    const iconMapping = {
+    "01d": "01d@4x.png",
+    "02d": "02d@4x.png",
+    "03d": "03d@4x.png",
+    "04d": "04d@4x.png",
+    "09d": "09d@4x.png",
+    "10d": "10d@4x.png",
+    "11d": "11d@4x.png",
+    "13d": "13d@4x.png",
+    "50d": "50d@4x.png",
+    "01n": "01n@4x.png",
+    "02n": "02n@4x.png",
+    "03n": "03n@4x.png",
+    "04n": "04n@4x.png",
+    "09n": "09n@4x.png",
+    "10n": "10n@4x.png",
+    "11n": "11n@4x.png",
+    "13n": "13n@4x.png",
+    "50n": "50n@4x.png",
+};
+
+const iconCode = data.weather[0].icon;
+const iconUrl = `https://openweathermap.org/img/wn/${iconMapping[iconCode]}`;
+
+setIcon.src = iconUrl;
     
     
     
