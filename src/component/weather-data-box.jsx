@@ -1,29 +1,27 @@
 
 function weatherBox(){
+
+    
     
     return(    
         
         <div className="mid-part">
-            <div className="current-weather">
-                <h5>Current Weather</h5>
-                <h6 className="time">06:30 PM</h6>
+            <div className="current-weather poppins-regular">
+                <p className="heading">Current Weather</p>
+                <p className="time poppins-thin">06:30 PM</p>
                 <div className="weather-data">
                     <div className="current-data">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1163/1163661.png" alt="" />
+                    <img className="main-icon" src="https://openweathermap.org/img/wn/10d@4x.png" alt="" /> {/*logo change*/}
                     </div>
                     <div className="weather-icon">
                         <p className="temp">25°C</p>
+                        <p className="des"></p>
                     </div>
                 </div>
-                {/* <div className="weather-other-detail">
-                    <img src="https://cdn-icons-png.flaticon.com/512/481/481453.png" alt="humidity" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/481/481453.png" alt="humidity" />
-                    <img src="https://cdn-icons-png.flaticon.com/512/481/481453.png" alt="humidity" />
-                    
-                </div> */}
+                
             </div>
             <div className="weather-map border">
-
+            
             </div>
             <div className="weather-city border">
 
