@@ -2,6 +2,9 @@
 
 function searchBox(){
     const API_key = "e807385dc4cef16d9f5b3aaa9fac79ca";
+
+
+    
     
     async function search(){
     const element = document.getElementsByClassName("place")[0];
@@ -58,6 +61,18 @@ const iconCode = data.weather[0].icon;
 const iconUrl = `https://openweathermap.org/img/wn/${iconMapping[iconCode]}`;
 
 setIcon.src = iconUrl;
+
+let humidity = data.main.humidity;
+let pressure = data.main.pressure;
+let speed = data.wind.speed;
+let humidity_icon =  document.getElementsByClassName("humidity")[0];
+let pressure_icon =  document.getElementsByClassName("pressure")[0];
+let speed_icon =  document.getElementsByClassName("speed")[0];
+
+humidity_icon.innerHTML = humidity+" %";
+pressure_icon.innerHTML = (pressure * 0.0145037738).toFixed(2)+" psi";
+speed_icon.innerHTML = Math.floor(speed)+" m/s";
+
     
     
     
@@ -68,7 +83,7 @@ setIcon.src = iconUrl;
             <div className="search">
                     <label>
                         <input  className="place" type="text" placeholder="Search for location"/>
-                        <button onClick={search} type="button"><img src="https://img.icons8.com/?size=256&id=132&format=png" alt="" /></button>
+                        <button className="btn" onClick={search} type="submit"><span className="material-symbols-rounded btn-icon">search</span></button>
                     </label>
             </div>
             <div className="profile">

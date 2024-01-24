@@ -15,9 +15,14 @@ function weatherBox(){
                     </div>
                     <div className="weather-icon">
                         <p className="temp">25</p>
-                        <p className="des"></p>
+                        <p className="des">rain</p>
                     </div>
                 </div>
+                    <div className="weather-other-detail">
+                        <li ><span className="material-symbols-outlined">humidity_high</span><br /><p className="humidity">35 %</p></li>
+                        <li ><span className="material-symbols-outlined">compare_arrows</span><br /><p className="pressure">14.76 psi</p></li>
+                        <li ><span className="material-symbols-outlined">airwave</span><br /><p className="speed">1 m/s</p></li>
+                    </div>
                 
             </div>
             <div className="weather-map border">
