@@ -1,9 +1,6 @@
-
-
-function searchBox(){
-  const API_key = "e807385dc4cef16d9f5b3aaa9fac79ca";
-
+function searchBox() {
   async function search() {
+    const API_key = "e807385dc4cef16d9f5b3aaa9fac79ca";
     const placeInput = document.querySelector(".place");
     const tempDisplay = document.querySelector(".temp");
     const timeDisplay = document.querySelector(".time");
@@ -12,23 +9,38 @@ function searchBox(){
     const humidityDisplay = document.querySelector(".humidity");
     const pressureDisplay = document.querySelector(".pressure");
     const speedDisplay = document.querySelector(".speed");
+    const cityDescriptions = document.querySelectorAll(".city-des li");
 
-    if (placeInput.value === "") {
-      return 0;
-    }
+    if (placeInput.value === "") return;
+
+    const fetchData = async (url) => {
+      const response = await fetch(url);
+      return await response.json();
+    };
+
+    const updateCityDescription = async (city, index) => {
+      const cityName = city.textContent;
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_key}`;
+
+      try {
+        const data = await fetchData(apiUrl);
+        const weatherDescription = data.weather[0].description;
+        cityDescriptions[index].textContent = weatherDescription;
+      } catch (error) {
+        console.error(`Error fetching weather data for ${cityName}:`, error);
+      }
+    };
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${placeInput.value}&appid=${API_key}&units=metric`;
-    const response = await fetch(url);
-    const data = await response.json();
+    const data = await fetchData(url);
 
     tempDisplay.innerHTML = Math.floor(data.main.temp);
 
     const date = new Date();
-    const current_time = date.toLocaleString([], {
-      hour: '2-digit',
-      minute: '2-digit'
+    timeDisplay.innerHTML = date.toLocaleString([], {
+      hour: "2-digit",
+      minute: "2-digit",
     });
-    timeDisplay.innerHTML = current_time;
 
     const desc = data.weather[0].description;
     descriptionDisplay.innerHTML = desc;
@@ -65,22 +77,30 @@ function searchBox(){
     humidityDisplay.innerHTML = `${humidity} %`;
     pressureDisplay.innerHTML = `${pressure} psi`;
     speedDisplay.innerHTML = `${speed} m/s`;
+
+    const cityNames = document.querySelectorAll(".city-name li");
+    cityNames.forEach(updateCityDescription);
   }
 
-
-    return(
-        <div className="search-box">
-            <div className="search">
-                    <label>
-                        <input  className="place" type="text" placeholder="Search for location"/>
-                        <button className="btn" onClick={search} type="submit"><span className="material-symbols-rounded btn-icon">search</span></button>
-                    </label>
-            </div>
-            <div className="profile">
-                <li></li>
-            </div>
-        </div>
-    )
+  return (
+    <div className="search-box">
+      <div className="search">
+        <label>
+          <input
+            className="place"
+            type="text"
+            placeholder="Search for location"
+          />
+          <button className="btn" onClick={search} type="submit">
+            <span className="material-symbols-rounded btn-icon">search</span>
+          </button>
+        </label>
+      </div>
+      <div className="profile">
+        <li></li>
+      </div>
+    </div>
+  );
 }
 
 export default searchBox;

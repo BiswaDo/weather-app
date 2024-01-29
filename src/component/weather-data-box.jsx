@@ -1,8 +1,4 @@
-
 function weatherBox(){
-
-    
-    
     return(    
         
         <div className="mid-part">
@@ -25,11 +21,26 @@ function weatherBox(){
                     </div>
                 
             </div>
-            <div className="weather-map border">
-            
+            <div className="weather-map">
             </div>
-            <div className="weather-city border">
-
+            <div className="weather-city poppins-regular">
+                <p className="heading">Popular Cities</p>
+                <div className="popular-city">
+                    <div className="city-name">    
+                        <li>Kolkata</li>
+                        <li>Delhi</li>
+                        <li>Pune</li>
+                        <li>Bangalore</li>
+                        <li>Mumbai</li>
+                    </div>
+                    <div class="city-des">
+                        <li id="kolkata-des">overcast clouds</li>
+                        <li id="delhi-des">haze</li>
+                        <li id="pune-des">scatterd clouds</li>
+                        <li id="bangalore-des">mist</li>
+                        <li id="mumbai-des">smoke</li>
+                    </div>
+                </div>
             </div>
         </div>
     );
