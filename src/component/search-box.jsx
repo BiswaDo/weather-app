@@ -1,6 +1,6 @@
 function searchBox() {
   async function search() {
-    const API_key = "e807385dc4cef16d9f5b3aaa9fac79ca";
+    const API_key = "Paste your api key here";
     const placeInput = document.querySelector(".place");
     const tempDisplay = document.querySelector(".temp");
     const timeDisplay = document.querySelector(".time");
