@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,8 +10,16 @@ body {
   background: linear-gradient(90deg, #2560AE, transparent);
 }
 
-/* Font-setting */
+.material-symbols-outlined,
+.material-symbols-rounded {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
 
+/* Font-setting */
 .material-symbols-outlined,
 .material-symbols-rounded {
   font-variation-settings:
@@ -130,9 +137,6 @@ body {
   font-style: italic;
 }
 
-/* =================================== */
-
-
 .container {
   display: flex;
   flex-direction: row;
@@ -161,12 +165,7 @@ body {
   gap: 10px;
 }
 
-
-
-.weather-data-box {
-  height: 150px;
-}
-
+.weather-data-box,
 .forecast-box {
   height: 150px;
 }
@@ -178,7 +177,6 @@ body {
   gap: 15px;
   padding-top: 23px;
 }
-
 
 li {
   list-style: none;
@@ -210,7 +208,6 @@ li {
   border: none;
   color: #fff;
   background: radial-gradient(#204D87, transparent 195px);
-
 }
 
 input::placeholder,
@@ -256,7 +253,6 @@ select:focus {
   border-radius: 10px;
   background: radial-gradient(#204D87, transparent 260px);
 }
-
 
 .heading {
   font-size: 12px;
@@ -315,7 +311,6 @@ select:focus {
   font-size: 10px;
 }
 
-
 .weather-map {
   flex-basis: 50%;
   border-radius: 10px;
@@ -349,7 +344,6 @@ select:focus {
   text-align: right;
 }
 
-
 .forecast-box {
   border-radius: 10px;
 }
@@ -361,12 +355,11 @@ select:focus {
     width: 250px;
     height: 30rem;
   }
-  .search-box input{
+  .search-box input {
     width: 210px;
   }
   
-
-  .mid-part{
+  .mid-part {
     flex-direction: column;
     align-items: center;
   }
