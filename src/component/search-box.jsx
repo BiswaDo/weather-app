@@ -1,6 +1,6 @@
 function searchBox() {
   async function search() {
-    const API_key = "Paste your api key here";
+    const API_key = "e807385dc4cef16d9f5b3aaa9fac79ca";
     const placeInput = document.querySelector(".place");
     const tempDisplay = document.querySelector(".temp");
     const timeDisplay = document.querySelector(".time");
@@ -10,7 +10,6 @@ function searchBox() {
     const pressureDisplay = document.querySelector(".pressure");
     const speedDisplay = document.querySelector(".speed");
     const cityDescriptions = document.querySelectorAll(".city-des li");
-
     if (placeInput.value === "") return;
 
     const fetchData = async (url) => {
@@ -80,6 +79,7 @@ function searchBox() {
 
     const cityNames = document.querySelectorAll(".city-name li");
     cityNames.forEach(updateCityDescription);
+    
   }
 
   return (

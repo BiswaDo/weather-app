@@ -1,4 +1,6 @@
+
 function weatherBox(){
+
     return(    
         
         <div className="mid-part">
@@ -22,6 +24,7 @@ function weatherBox(){
                 
             </div>
             <div className="weather-map">
+                
             </div>
             <div className="weather-city poppins-regular">
                 <p className="heading">Popular Cities</p>
